@@ -1,0 +1,29 @@
+{
+    "name": "bobkingstone/securepass",
+    "type": "Laravel Package",
+    "description": "Auto-generate random password string with option for the inclusion of symbols",
+    "keywords": "Laravel Password",
+    "licence": "MIT",
+    "authors": [
+        {
+            "name": "Bob Kingstone",
+            "email": "robert.kingstone@uglygekko.co.uk"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.1"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
+        "psr-0": {
+            "Bobkingstone\\Securepass\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
