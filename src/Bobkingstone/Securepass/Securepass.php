@@ -49,6 +49,7 @@ class Securepass {
      */
     public function generate($length = 10, $specials = false)
     {
+
         $string = $this->getRandomString($length);
 
         if ($specials)
