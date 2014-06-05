@@ -4,7 +4,7 @@
 Add bobkingstone/securepass to your composer.json
 
     "require": {
-        "bobkingstone/securepass": "0.0.*"
+        "bobkingstone/securepass": "dev-master"
     }
 
 Run composer update
