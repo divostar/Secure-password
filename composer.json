@@ -1,6 +1,5 @@
 {
     "name": "bobkingstone/securepass",
-    "type": "Laravel Package",
     "description": "Auto-generate random password string with option for the inclusion of symbols",
     "keywords": [ "Laravel","Password"],
     "licence": "MIT",
