@@ -1,6 +1,10 @@
 <?php namespace Bobkingstone\Securepass;
 
 
+/**
+ * Class Securepass
+ * @package Bobkingstone\Securepass
+ */
 class Securepass {
 
     /**
@@ -61,6 +65,15 @@ class Securepass {
 
     }
 
+    public function generateHuman()
+    {
+        $string = $this->returnRandomWord();
+
+        $string = $this->insertRandomCharacter($string);
+
+        return $string;
+    }
+
     /**
      * @param $string
      * @return array|string
@@ -81,5 +94,32 @@ class Securepass {
         $array = implode($array);
 
         return $array;
+    }
+
+    /**
+     * @return array
+     */
+    private function readFileContentsToArray()
+    {
+        $array = file('wordList.txt', FILE_SKIP_EMPTY_LINES);
+
+        return $array;
+    }
+
+    /**
+     * @return mixed
+     */
+    private function returnRandomWord()
+    {
+        $wordList = readFileContentsToArray();
+
+        $count = getLengthOfArray();
+
+        $random = getRandomNumber(0,$count);
+
+        $word = $wordList[$random];
+
+        return $word;
+
     }
 }
