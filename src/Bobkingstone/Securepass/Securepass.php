@@ -1,6 +1,9 @@
 <?php namespace Bobkingstone\Securepass;
 
-
+/**
+ * Class Securepass
+ * @package Bobkingstone\Securepass
+ */
 /**
  * Class Securepass
  * @package Bobkingstone\Securepass
@@ -10,7 +13,7 @@ class Securepass {
     /**
      * @var array
      */
-    protected $specials = ['$','£','-','&','*','+','@',':','?','{','}','~','!','^','[',']'];
+    protected $specials = ['$','£','-','&','*','+','@',':','?','{','}','~','!','[',']'];
 
 
     /**
@@ -58,18 +61,21 @@ class Securepass {
 
         if ($specials)
         {
-            $string = $this->insertRandomCharacter($string);
+            $string = $this->insertRandomCharacters($string);
         }
 
         return $string;
 
     }
 
+    /**
+     * @return array|mixed|string
+     */
     public function generateHuman()
     {
         $string = $this->returnRandomWord();
 
-        $string = $this->insertRandomCharacter($string);
+        $string = $this->insertSingleRandomCharacter($string);
 
         return $string;
     }
@@ -78,18 +84,30 @@ class Securepass {
      * @param $string
      * @return array|string
      */
-    private function insertRandomCharacter($string)
+    private function insertRandomCharacters($string)
+    {
+
+        for($i = 0; $i <= rand(1,4); $i++)
+        {
+            $string = $this->insertRandomCharacters($string);
+        }
+
+        return $string;
+    }
+
+    /**
+     * @param $string
+     * @return array|string
+     */
+    private function insertSingleRandomCharacter($string)
     {
         $array = str_split($string);
         $length = strlen($string);
 
-        for($i = 0; $i <= rand(1,4); $i++)
-        {
-            $symbol = $this->getRandomSpecial();
-            $indexToSwop = $this->getRandomNumber(0,$length);
+        $symbol = $this->getRandomSpecial();
+        $indexToSwop = $this->getRandomNumber(0,$length-2);
 
-            $array[$indexToSwop] = $symbol;
-        }
+        $array[$indexToSwop] = $symbol;
 
         $array = implode($array);
 
@@ -101,7 +119,9 @@ class Securepass {
      */
     private function readFileContentsToArray()
     {
-        $array = file('wordList.txt', FILE_SKIP_EMPTY_LINES);
+        $dir = dirname(__FILE__) . '/Resources/words.txt';
+
+        $array = file($dir);
 
         return $array;
     }
@@ -111,15 +131,25 @@ class Securepass {
      */
     private function returnRandomWord()
     {
-        $wordList = readFileContentsToArray();
+        $wordList = $this->readFileContentsToArray();
 
-        $count = getLengthOfArray();
+        $count = $this->getLengthOfArray($wordList);
 
-        $random = getRandomNumber(0,$count);
+        $random = $this->getRandomNumber(0,$count);
 
         $word = $wordList[$random];
 
         return $word;
+    }
 
+    /**
+     * @param $wordList
+     * @return int
+     */
+    private function getLengthOfArray($wordList)
+    {
+        $count = count($wordList);
+
+        return $count;
     }
 }

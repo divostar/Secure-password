@@ -58,6 +58,11 @@ class SecurepassTest extends TestCase {
         $this->assertEquals(1,$check);
     }
 
+    /** @test */
+    public function randomWordIsReturned()
+    {
+        $string = Securepass::generateHuman();
 
-
+        $this->assertNotNull($string,'String is null');
+    }
 }
