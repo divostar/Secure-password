@@ -30,7 +30,8 @@ To create a different length string pass in the required length:
 To include symbols within password:
 
     Securepass::generate(11,true);
+    
+To generate a more human readable password:
 
+    Securepass::generateHuman();
 
-##Future releases
- - Add word list for more human friendly password generation
