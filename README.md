@@ -1,5 +1,7 @@
 # Generate random string passwords with the option of including symbols
 
+This package uses Laravels 'St::random()' function to generate the basic alpha numeric string and then adds symbols as requested.
+
 ##Installation
 Add bobkingstone/securepass to your composer.json
 
@@ -30,7 +32,8 @@ To create a different length string pass in the required length:
 To include symbols within password:
 
     Securepass::generate(11,true);
+    
+To generate a more human readable password:
 
+    Securepass::generateHuman();
 
-##Future releases
- - Add word list for more human friendly password generation
