@@ -1,7 +1,7 @@
 {
     "name": "bobkingstone/securepass",
     "description": "Auto-generate random password string with option for the inclusion of symbols. Uses Laravels Str random function to generate original alpha numeric string",
-    "keywords": [ "Laravel","Password"],
+    "keywords": "Laravel",
     "licence": "MIT",
     "authors": [
         {
