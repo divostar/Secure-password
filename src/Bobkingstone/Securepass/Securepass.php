@@ -1,9 +1,6 @@
 <?php namespace Bobkingstone\Securepass;
 
-/**
- * Class Securepass
- * @package Bobkingstone\Securepass
- */
+
 /**
  * Class Securepass
  * @package Bobkingstone\Securepass
