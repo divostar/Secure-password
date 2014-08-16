@@ -2,6 +2,7 @@
 
 [![Latest Stable Version](https://poser.pugx.org/bobkingstone/securepass/v/stable.svg)](https://packagist.org/packages/bobkingstone/securepass)
 [![Total Downloads](https://poser.pugx.org/bobkingstone/securepass/downloads.svg)](https://packagist.org/packages/bobkingstone/securepass)
+[![License](https://poser.pugx.org/leaphly/cart-bundle/license.svg)](https://packagist.org/packages/leaphly/cart-bundle)
 
 This package uses Laravels 'St::random()' function to generate the basic alpha numeric string and then adds symbols as requested.
 
