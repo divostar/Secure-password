@@ -1,5 +1,8 @@
 # Generate random string passwords with the option of including symbols
 
+[![Latest Stable Version](https://poser.pugx.org/bobkingstone/securepass/v/stable.svg)](https://packagist.org/packages/bobkingstone/securepass)
+[![Total Downloads](https://poser.pugx.org/bobkingstone/securepass/downloads.svg)](https://packagist.org/packages/bobkingstone/securepass)
+
 This package uses Laravels 'St::random()' function to generate the basic alpha numeric string and then adds symbols as requested.
 
 ##Installation
