@@ -86,7 +86,7 @@ class Securepass {
 
         for($i = 0; $i <= rand(1,4); $i++)
         {
-            $string = $this->insertRandomCharacters($string);
+            $string = $this->insertSingleRandomCharacters($string);
         }
 
         return $string;
